@@ -1,0 +1,128 @@
+# source_candidates_task:
+#   description: >
+#     Search for candidate profiles across job boards, LinkedIn, and internal databases that match the following job description:
+#     {job_description}
+
+#     Prioritize candidates with relevant skills, recent experience, and active job-seeking status. Include at least 10 suitable candidates.
+
+#   expected_output: >
+#     A list of 10 candidates with their:
+#     - Full name
+#     - Current role & experience summary
+#     - Skills
+#     - Contact information (email/phone)
+#     - Resume URL or file path (if available)
+
+#   agent: sourcing_agent
+
+# screen_candidates_task:
+#   description: >
+#     Evaluate the resumes gathered in the sourcing step against the job description:
+#     {job_description}
+
+#     Focus on relevance of experience, key technical & soft skills, and project highlights.
+
+#   expected_output: >
+#     A shortlist of the top 4 most suitable candidates along with a score (0-10) and 2-3 lines explaining their match.
+
+#   agent: screening_agent
+
+# engage_candidates_task:
+#   description: >
+#     Reach out to the shortlisted candidates using WhatsApp to confirm their interest in the role and availability for an interview.
+
+#     Use a friendly, professional tone. Ask them their preferred time slot for an interview.
+
+#   expected_output: >
+#     WhatsApp message status for each candidate (delivered/read/replied) along with their response summary including availability.
+
+#   agent: engagement_agent
+
+# schedule_interviews_task:
+#   description: >
+#     Using the availability provided by the engaged candidates, coordinate with the recruiter (HR) calendar to schedule interviews.
+
+#     Use Google Calendar to schedule these meetings with candidate name, role, and time slot.
+
+#   expected_output: >
+#     Calendar invite links for each candidate's interview along with confirmation status from both sides.
+
+#   agent: scheduling_agent
+
+# recruitment_status_task:
+#   description: >
+#     Provide a real-time summary of the recruitment progress for the given job description:
+#     {job_description}
+
+#     Include how many candidates have been sourced, screened, engaged, and scheduled.
+
+#   expected_output: >
+#     A dashboard-style textual report showing the status across each stage of the hiring pipeline.
+
+#   agent: talent_acquisition_manager
+
+source_candidates_task:
+  description: >
+    Search for candidate profiles across job boards, LinkedIn, and internal databases that match the following job description:
+    {job_description}
+
+    Prioritize candidates with relevant skills, recent experience, and active job-seeking status. Include at least 10 suitable candidates.
+
+  expected_output: >
+    A list of 10 candidates with their:
+    - Full name
+    - Current role & experience summary
+    - Skills
+    - Contact information (email/phone)
+    - Resume URL or file path (if available)
+
+  agent: sourcing_agent
+
+screen_candidates_task:
+  description: >
+    Evaluate the resumes gathered in the sourcing step against the job description:
+    {job_description}
+
+    Focus on relevance of experience, key technical & soft skills, and project highlights.
+
+  expected_output: >
+    A shortlist of the top 4 most suitable candidates along with a score (0-10) and 2-3 lines explaining their match.
+
+  agent: screening_agent
+
+engage_candidates_task:
+  description: >
+    Reach out to the shortlisted candidates using WhatsApp to confirm their interest in the role and availability for an interview.
+
+    Use a friendly, professional tone. Ask them their preferred time slot for an interview.
+
+  expected_output: >
+    WhatsApp message status for each candidate (delivered/read/replied) along with their response summary including availability.
+
+  agent: engagement_agent
+
+schedule_interviews_task:
+  description: >
+    Schedule an interview with candidate {candidate_name} for the role of {job_role}
+    on {interview_date} at {interview_time}. 
+    Use the tool to book a Google Calendar invite.
+    Create the calendar invite and notify the recruiter and candidate.
+
+  expected_output: >
+    A Google Calendar invite link and confirmation message with date/time.
+
+  agent: scheduling_agent
+
+recruitment_status_task:
+  description: >
+    Provide a real-time summary of the recruitment progress for the given job description:
+    {job_description}
+
+    Include how many candidates have been sourced, screened, engaged, and scheduled.
+
+  expected_output: >
+    A dashboard-style textual report showing the status across each stage of the hiring pipeline.
+
+  agent: talent_acquisition_manager
+
+

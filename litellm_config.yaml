@@ -1,0 +1,10 @@
+# litellm_config.yaml
+
+model_list: 
+  - model_name: huggingface/falcon-7b-instruct
+    litellm_params:
+      model: huggingface/falcon-7b-instruct
+      api_key: ${HUGGINGFACE_API_KEY}
+      provider: huggingface
+
+default_model: huggingface/falcon-7b-instruct

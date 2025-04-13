@@ -1,0 +1,18 @@
+.env
+__pycache__/
+.DS_Store
+# Ignore virtual environment
+env/
+# Ignore large files
+*.dll
+*.lib
+*.pyd
+# Python specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.Python
+.vscode/
+.idea/
